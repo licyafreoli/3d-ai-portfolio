@@ -1,0 +1,21 @@
+{
+  "project": "portable_audio_recorder",
+  "blender_version": "5.2.4 LTS",
+  "resolution": [
+    900,
+    675
+  ],
+  "render_engine": "Cycles CPU",
+  "samples": 20,
+  "mesh_objects": 40,
+  "evaluated_vertices": 5686,
+  "evaluated_faces": 5035,
+  "evaluated_triangles": 11214,
+  "renders": [
+    {
+      "file": "beauty.png",
+      "render_seconds": 29.76
+    }
+  ],
+  "blend_file": "portable_audio_recorder.blend"
+}

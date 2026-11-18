@@ -1,0 +1,21 @@
+{
+  "project": "procedural_cable_connector_kit",
+  "blender_version": "5.2.4 LTS",
+  "resolution": [
+    900,
+    675
+  ],
+  "render_engine": "Cycles CPU",
+  "samples": 20,
+  "mesh_objects": 21,
+  "evaluated_vertices": 7876,
+  "evaluated_faces": 7353,
+  "evaluated_triangles": 15698,
+  "renders": [
+    {
+      "file": "beauty.png",
+      "render_seconds": 25.81
+    }
+  ],
+  "blend_file": "procedural_cable_connector_kit.blend"
+}

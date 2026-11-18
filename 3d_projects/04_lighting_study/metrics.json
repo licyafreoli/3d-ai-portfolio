@@ -1,0 +1,29 @@
+{
+  "project": "three_point_lighting_study",
+  "blender_version": "5.2.4 LTS",
+  "resolution": [
+    900,
+    675
+  ],
+  "render_engine": "Cycles CPU",
+  "samples": 20,
+  "mesh_objects": 40,
+  "evaluated_vertices": 5686,
+  "evaluated_faces": 5035,
+  "evaluated_triangles": 11214,
+  "renders": [
+    {
+      "file": "beauty_soft.png",
+      "render_seconds": 26.21
+    },
+    {
+      "file": "beauty_dramatic.png",
+      "render_seconds": 27.27
+    },
+    {
+      "file": "beauty_cool.png",
+      "render_seconds": 27.99
+    }
+  ],
+  "blend_file": "three_point_lighting_study.blend"
+}

@@ -1,0 +1,21 @@
+{
+  "project": "stylized_desk_plant",
+  "blender_version": "5.2.4 LTS",
+  "resolution": [
+    900,
+    675
+  ],
+  "render_engine": "Cycles CPU",
+  "samples": 20,
+  "mesh_objects": 36,
+  "evaluated_vertices": 13252,
+  "evaluated_faces": 13829,
+  "evaluated_triangles": 26362,
+  "renders": [
+    {
+      "file": "beauty.png",
+      "render_seconds": 37.17
+    }
+  ],
+  "blend_file": "stylized_desk_plant.blend"
+}

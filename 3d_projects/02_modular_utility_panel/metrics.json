@@ -1,0 +1,21 @@
+{
+  "project": "modular_utility_panel",
+  "blender_version": "5.2.4 LTS",
+  "resolution": [
+    900,
+    675
+  ],
+  "render_engine": "Cycles CPU",
+  "samples": 20,
+  "mesh_objects": 74,
+  "evaluated_vertices": 8452,
+  "evaluated_faces": 7875,
+  "evaluated_triangles": 16606,
+  "renders": [
+    {
+      "file": "beauty.png",
+      "render_seconds": 46.33
+    }
+  ],
+  "blend_file": "modular_utility_panel.blend"
+}

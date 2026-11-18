@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five Blender 5.2.4 portfolio scene studies with editable project files, renders, and measured scene metrics.">
+  <title>Rossana Licya Freitas de Oliveira — 3D Portfolio</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0a0d12;--panel:#111821;--panel2:#151f2b;--ink:#eef4fa;--muted:#a8b6c5;--line:#293644;--accent:#70e1c1;--accent2:#8eb8ff;--warn:#f7d68a;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#142532 0,transparent 38%),var(--bg);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;display:block}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line)}.brand{font-weight:750;letter-spacing:.02em}.navlinks{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+    .hero{padding:76px 0 64px;display:grid;grid-template-columns:1.3fr .7fr;gap:42px;align-items:center}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:700}.hero h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;letter-spacing:-.055em;margin:13px 0 18px}.hero p{max-width:670px;color:var(--muted);font-size:1.08rem}.hero-box{border:1px solid #34504f;background:linear-gradient(145deg,#132a2d,#111821 70%);border-radius:24px;padding:27px;box-shadow:0 24px 70px #0005}.hero-box strong{display:block;font-size:1.05rem;margin-bottom:8px}.hero-box p{font-size:.93rem;margin:0}.actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}.button{padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-weight:650}.button.primary{background:var(--accent);color:#09201c;border-color:var(--accent)}
+    .notice{border:1px solid #695a31;background:#211e16;color:#e8d7a5;border-radius:14px;padding:14px 17px;font-size:.9rem;margin:0 0 30px}.notice strong{color:var(--warn)}
+    section{padding:34px 0 18px}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.section-head h2{font-size:1.7rem;letter-spacing:-.03em;margin:0}.section-head p{color:var(--muted);max-width:560px;margin:0;font-size:.93rem}.about-grid,.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.panel h3{margin:0 0 9px;font-size:1rem}.panel p,.panel li{color:var(--muted);font-size:.94rem}.panel p:last-child{margin-bottom:0}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.tag{border:1px solid #314350;background:#10171f;border-radius:999px;padding:5px 10px;font-size:.78rem;color:#c5d4df}
+    .projects{display:grid;gap:16px}.project{display:grid;grid-template-columns:.72fr 1.28fr;gap:20px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}.project h3{font-size:1.16rem;margin:0}.project .sub{margin:3px 0 12px;color:var(--muted);font-size:.85rem}.done{display:inline-block;color:var(--accent);border:1px solid #34504f;border-radius:999px;padding:3px 9px;text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;font-weight:750;margin-bottom:10px}.render-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#10161e}.render-caption{font-size:.76rem;color:var(--muted);margin:6px 2px 0}.details{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.details p{margin:7px 0;color:var(--muted);font-size:.88rem}.details b{color:var(--ink)}.images{grid-column:1/-1;border-top:1px solid var(--line);padding-top:11px;margin-top:5px!important}.download{display:inline-block;margin-top:6px;border:1px solid var(--line);border-radius:9px;padding:5px 9px;font-size:.78rem;font-weight:650}
+    .lighting-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.lighting-grid figure{margin:0}.lighting-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line)}.lighting-grid figcaption{font-size:.68rem;color:var(--muted);text-align:center;margin-top:2px}.workflow{display:grid;grid-template-columns:1fr 1fr;gap:16px}.workflow ol{padding-left:19px;margin:8px 0;color:var(--muted)}.workflow code{color:#a8e7d5;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.85em}.contact{display:flex;justify-content:space-between;gap:25px;align-items:center;background:linear-gradient(120deg,#142a2b,#121a23);border:1px solid #34504f;border-radius:22px;padding:26px;margin:28px 0 50px}.contact h2{margin:0 0 6px}.contact p{margin:0;color:var(--muted)}footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--muted);font-size:.82rem}
+    @media(max-width:780px){.hero{grid-template-columns:1fr;padding:50px 0 38px}.hero-box{max-width:550px}.about-grid,.skills-grid,.workflow{grid-template-columns:1fr}.project{grid-template-columns:1fr}.placeholder{min-height:190px}.section-head{display:block}.section-head p{margin-top:7px}.contact{display:block}.contact .actions{margin-top:18px}}
+    @media(max-width:520px){.wrap{width:min(100% - 26px,var(--max))}.nav{align-items:flex-start;gap:14px;flex-direction:column}.navlinks{gap:12px}.hero h1{font-size:2.6rem}.details{grid-template-columns:1fr}.images{grid-column:auto}.project{padding:14px}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">ROSSANA LICYA</a>
+      <div class="navlinks"><a href="#about">About</a><a href="#projects">Projects</a><a href="#workflow">Workflow</a><a href="#contact">Contact</a></div>
+    </nav>
+    <div class="hero" id="top">
+      <div>
+        <div class="eyebrow">Digital Projects · Five Blender Scene Studies</div>
+        <h1>Rossana Licya<br>Freitas de Oliveira</h1>
+        <p>Technical project contributor building a portfolio in Blender 3D. This page presents five self-directed scene studies with editable Blender files, renders, and measured scene statistics.</p>
+        <div class="actions"><a class="button primary" href="#projects">Explore completed scene studies</a><a class="button" href="mailto:rossana.licyarl@gmail.com">Email me</a></div>
+      </div>
+      <aside class="hero-box"><strong>Portfolio project set</strong><p>Five original scene studies created in Blender 5.2.4 LTS: a product render, modular hard-surface kit, stylized organic asset, three-lighting comparison, and procedural curve-based cable kit.</p></aside>
+    </div>
+    <p class="notice"><strong>Project scope:</strong> These editable scene studies were generated programmatically in Blender by the assistant at the candidate’s request. They are prototypes, not evidence of independent Blender proficiency or prior client/employer work; review and revise them before presenting personal contributions.</p>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <div class="section-head"><h2>About</h2><p>Technical coordination and independent digital delivery, with a focused path toward 3D asset production.</p></div>
+      <div class="about-grid">
+        <article class="panel"><h3>Background</h3><p>I am studying Systems Analysis and Development and have worked across IT coordination, freelance web and visual communication, and academic community programs. At AWS, I promoted learning initiatives and supported presentations and digital content for student communities.</p><p>I bring experience organizing requirements, deadlines, and deliverables, and coordinating with technical and nontechnical stakeholders.</p></article>
+        <article class="panel"><h3>Working approach</h3><p>For a project-based 3D role, I would use concise async updates, a clear scene structure, documented settings, versioned deliverables, and a final QA checklist. Blender specialties and work samples will be added here once demonstrated.</p><div class="tags"><span class="tag">Technical coordination</span><span class="tag">Remote projects</span><span class="tag">AWS community</span><span class="tag">Digital production</span></div></article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head"><h2>Featured Projects</h2><p>Five completed scene studies demonstrating modeling, lighting, procedural workflows, and workflow documentation. The downloadable .blend files contain the editable scenes.</p></div>
+      <div class="projects">
+        <article class="project">
+          <div><div class="done">Completed · Blender 5.2.4</div><a href="3d_projects/01_portable_audio_recorder/beauty.png"><img class="render-img" src="3d_projects/01_portable_audio_recorder/beauty.png" alt="Cycles product render of a graphite portable audio recorder with a teal display and controls"></a><p class="render-caption">Cycles CPU · 900 × 675 · 20 samples · 29.76 s</p><a class="download" href="3d_projects/01_portable_audio_recorder/portable_audio_recorder.blend" download>Download editable .blend</a></div>
+          <div><h3>01 — Portable Audio Recorder</h3><p class="sub">Product hero render · Hard-surface modeling</p><div class="details">
+            <p><b>Brief</b><br>Build a compact recorder with display, control wheel, ports, and speaker grille.</p><p><b>Role and tools</b><br>Self-directed model, materials, scene setup, and render. Blender 5.2.4, Cycles CPU, bevels, weighted normals, and smart UV unwrap.</p>
+            <p><b>Workflow</b><br>Blockout → separate body and controls → edge treatment → materials and UVs → studio lights → camera/render → save editable scene.</p><p><b>Technical challenge solved</b><br>Small controls needed to read at the hero camera distance. Separate meshes, controlled bevels, and contrasting emissive screen details keep the layout legible.</p>
+            <p><b>Measured result</b><br>40 mesh objects · 5,686 evaluated vertices · 11,214 triangles · 900 × 675 render.</p><p class="images"><b>Included</b><br>Beauty render and editable Blender scene. Render time is from this CPU render run, not a cross-machine benchmark.</p>
+          </div></div>
+        </article>
+        <article class="project">
+          <div><div class="done">Completed · Blender 5.2.4</div><a href="3d_projects/02_modular_utility_panel/beauty.png"><img class="render-img" src="3d_projects/02_modular_utility_panel/beauty.png" alt="Rendered six-piece modular blue steel utility panel kit with vents and fasteners"></a><p class="render-caption">Cycles CPU · 900 × 675 · 20 samples · 46.33 s</p><a class="download" href="3d_projects/02_modular_utility_panel/modular_utility_panel.blend" download>Download editable .blend</a></div>
+          <div><h3>02 — Modular Sci-Fi Utility Panel</h3><p class="sub">Reusable hard-surface asset set</p><div class="details">
+            <p><b>Brief</b><br>Create six wall modules with vents, status lights, and fasteners.</p><p><b>Role and tools</b><br>Self-directed kit modeling, materials, scene setup, and render. Blender 5.2.4, Cycles CPU, bevels, weighted normals, and smart UV unwrap.</p>
+            <p><b>Workflow</b><br>Set shared dimensions → repeat the 3 × 2 module layout → add inset panels and details → unwrap → light and render.</p><p><b>Technical challenge solved</b><br>Repeated parts needed consistent spacing and shared visual language. The six modules use a common size and repeated detail placement, with alternating panel materials to make each unit readable.</p>
+            <p><b>Measured result</b><br>74 mesh objects · 8,452 evaluated vertices · 16,606 triangles · 6 repeated modules.</p><p class="images"><b>Included</b><br>Beauty render and editable Blender scene; scene statistics are evaluated mesh totals.</p>
+          </div></div>
+        </article>
+        <article class="project">
+          <div><div class="done">Completed · Blender 5.2.4</div><a href="3d_projects/03_stylized_desk_plant/beauty.png"><img class="render-img" src="3d_projects/03_stylized_desk_plant/beauty.png" alt="Stylized terracotta desk planter with clustered green leaves, rendered against a dark green studio backdrop"></a><p class="render-caption">Cycles CPU · 900 × 675 · 20 samples · 37.17 s</p><a class="download" href="3d_projects/03_stylized_desk_plant/stylized_desk_plant.blend" download>Download editable .blend</a></div>
+          <div><h3>03 — Stylized Desk Plant</h3><p class="sub">Organic modeling and silhouette study</p><div class="details">
+            <p><b>Brief</b><br>Create a compact decorative plant with a tapered pot, branching stems, and stylized leaves.</p><p><b>Role and tools</b><br>Self-directed model, materials, lighting, and render. Blender 5.2.4, Cycles CPU, editable meshes and curve stems.</p>
+            <p><b>Workflow</b><br>Model pot and rim → add soil → build stems → place varied leaf meshes → smart UV unwrap → light and render.</p><p><b>Technical challenge solved</b><br>Balance a clear plant silhouette with a compact arrangement. Varied leaf scale, orientation, and green shades separate the leaf cluster from the pot.</p>
+            <p><b>Measured result</b><br>36 mesh objects · 13,252 evaluated vertices · 26,362 triangles · 900 × 675 render.</p><p class="images"><b>Included</b><br>Beauty render and editable Blender scene. The leaves are stylized mesh forms rather than botanical scans.</p>
+          </div></div>
+        </article>
+        <article class="project">
+          <div><div class="done">Completed · Blender 5.2.4</div><div class="lighting-grid">
+            <figure><a href="3d_projects/04_lighting_study/beauty_soft.png"><img src="3d_projects/04_lighting_study/beauty_soft.png" alt="Soft studio lighting variation"></a><figcaption>Soft studio</figcaption></figure>
+            <figure><a href="3d_projects/04_lighting_study/beauty_dramatic.png"><img src="3d_projects/04_lighting_study/beauty_dramatic.png" alt="Dramatic warm and blue lighting variation"></a><figcaption>Dramatic</figcaption></figure>
+            <figure><a href="3d_projects/04_lighting_study/beauty_cool.png"><img src="3d_projects/04_lighting_study/beauty_cool.png" alt="Cool technical lighting variation"></a><figcaption>Cool technical</figcaption></figure>
+          </div><a class="download" href="3d_projects/04_lighting_study/three_point_lighting_study.blend" download>Download editable .blend</a></div>
+          <div><h3>04 — Three-Point Lighting Study</h3><p class="sub">One object, three lighting moods</p><div class="details">
+            <p><b>Brief</b><br>Render the same portable recorder with soft studio, dramatic, and cool technical lighting.</p><p><b>Role and tools</b><br>Self-directed lighting, render setup, and comparison. Blender 5.2.4, Cycles CPU, fixed camera and materials.</p>
+            <p><b>Workflow</b><br>Lock object/camera → create three labeled light rigs → render each setup → compare exposure, reflections, and color separation.</p><p><b>Technical challenge solved</b><br>Make lighting differences legible while holding product and camera constant. The scene stores all three named light sets.</p>
+            <p><b>Measured result</b><br>40 mesh objects · 11,214 triangles. Render times: soft 26.21 s; dramatic 27.27 s; cool 27.99 s at 900 × 675 and 20 samples.</p><p class="images"><b>Included</b><br>Three matching beauty renders and the editable Blender scene.</p>
+          </div></div>
+        </article>
+        <article class="project">
+          <div><div class="done">Completed · Blender 5.2.4</div><a href="3d_projects/05_procedural_cable_kit/beauty.png"><img class="render-img" src="3d_projects/05_procedural_cable_kit/beauty.png" alt="Two smooth blue and teal cable curves with metallic connector housings"></a><p class="render-caption">Cycles CPU · 900 × 675 · 20 samples · 25.81 s</p><a class="download" href="3d_projects/05_procedural_cable_kit/procedural_cable_connector_kit.blend" download>Download editable .blend</a></div>
+          <div><h3>05 — Procedural Cable and Connector Kit</h3><p class="sub">Curve workflow and Geometry Nodes exploration</p><div class="details">
+            <p><b>Brief</b><br>Create two reusable cable paths with connector housings, sleeves, and end details.</p><p><b>Role and tools</b><br>Self-directed asset, Geometry Nodes setup, and render. Blender 5.2.4, Cycles CPU, curve-to-mesh node group.</p>
+            <p><b>Workflow</b><br>Model connectors → define Bezier paths → build Curve to Mesh profile node group → assign it to both cable curves → render.</p><p><b>Technical challenge solved</b><br>Maintain a consistent profile along curved paths. A shared Geometry Nodes group converts each curve through a 10-segment circle with 0.045-unit radius.</p>
+            <p><b>Measured result</b><br>21 mesh objects · 7,876 evaluated vertices · 15,698 triangles · 25.81 s render at 900 × 675 and 20 samples.</p><p class="images"><b>Included</b><br>Beauty render, editable .blend with node group, and scene metrics.</p>
+          </div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head"><h2>Skills & Tools</h2><p>Separating resume-supported experience from Blender competencies that still need portfolio evidence.</p></div>
+      <div class="skills-grid">
+        <article class="panel"><h3>Documented experience</h3><div class="tags"><span class="tag">AWS / Cloud</span><span class="tag">Git / GitHub</span><span class="tag">HTML / CSS</span><span class="tag">JavaScript / SQL</span><span class="tag">HubSpot CRM</span><span class="tag">Office / Google Workspace</span><span class="tag">Scrum / Kanban</span><span class="tag">Project coordination</span></div></article>
+        <article class="panel"><h3>Techniques in these generated scenes</h3><p>These files were assembled programmatically in Blender at the candidate’s request. They are useful prototypes, but do not by themselves demonstrate independent Blender proficiency. Review and revise them hands-on before using them as personal skill evidence.</p><div class="tags"><span class="tag">Blender 5.2.4 LTS</span><span class="tag">Hard-surface modeling</span><span class="tag">Smart UV unwrap</span><span class="tag">Cycles CPU</span><span class="tag">Node-based materials</span><span class="tag">Geometry Nodes curve-to-mesh</span><span class="tag">Animation: not included</span><span class="tag">Optimization: scene counts measured</span></div></article>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="section-head"><h2>Process & Workflow Documentation</h2><p>Recorded from the portable audio recorder scene. The scene is a generated prototype; values below come from its actual Blender file and render run.</p></div>
+      <div class="workflow">
+        <article class="panel"><h3>Recorder scene record</h3><ol>
+          <li><b>Project:</b> Portable Audio Recorder v1.0 · review status: prototype for candidate review.</li>
+          <li><b>Environment:</b> Blender 5.2.4 LTS · metric display units · <code>01_portable_audio_recorder/portable_audio_recorder.blend</code>.</li>
+          <li><b>Collections:</b> <code>00_STAGE / 01_ASSETS / 02_LIGHTS / 03_CAMERAS</code>.</li>
+          <li><b>Geometry:</b> 40 mesh objects · 5,686 evaluated vertices · 5,035 evaluated faces · 11,214 evaluated triangles. Body, display, controls, grille, and ports are named separately.</li>
+          <li><b>Modifiers:</b> bevel edge highlights and weighted corner normals are used on hard-surface parts.</li>
+          <li><b>UV/materials:</b> smart UV unwrap on mesh objects; node-based materials; no external image textures.</li>
+        </ol></article>
+        <article class="panel"><h3>Render and handoff record</h3><ol>
+          <li><b>Lighting/camera:</b> Key softbox, warm rim, and front fill; named main camera with fixed hero framing.</li>
+          <li><b>Render:</b> Cycles CPU · 900 × 675 · 20 samples · denoising on · measured run 29.76 seconds.</li>
+          <li><b>Outputs:</b> <code>portable_audio_recorder.blend</code> and <code>beauty.png</code> in the project folder; no linked texture dependencies.</li>
+          <li><b>QA:</b> image reviewed for framing, readability, and visible mesh details; project reopened in Blender to organize collections.</li>
+          <li><b>Performance note:</b> no before/after optimization benchmark was captured. The render time is one local CPU run, not a cross-machine comparison.</li>
+          <li><b>Candidate next step:</b> inspect the node materials, edit the scene manually, and document personal revisions before presenting this as independent work.</li>
+        </ol></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact"><div><h2>Contact</h2><p>Fortaleza, Brazil · Available for remote project conversations</p><div class="tags"><a class="tag" href="mailto:rossana.licyarl@gmail.com">rossana.licyarl@gmail.com</a><a class="tag" href="https://linkedin.com/in/licyaoliveira">LinkedIn</a><a class="tag" href="https://github.com/licyafreoli">GitHub</a><a class="tag" href="https://licyafreoli.github.io/portfolio">Portfolio</a></div></div><div class="actions"><a class="button primary" href="mailto:rossana.licyarl@gmail.com">Get in touch</a></div></div>
+    </section>
+  </main>
+  <footer><div class="wrap">© Rossana Licya Freitas de Oliveira · Self-directed portfolio prototypes · Blender files and images are linked in each case study.</div></footer>
+</body>
+</html>
